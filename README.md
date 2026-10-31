@@ -15,7 +15,7 @@ The goal is not to replace a mature agent product. The goal is to make the movin
 - How to keep API keys out of code and out of child tool processes
 - How to count tokens, save transcripts, and render model Markdown safely
 
-Read [learning/README.md](learning/README.md) for the guided architecture walkthrough and [WORKFLOW.md](WORKFLOW.md) for the end-to-end flow chart.
+Read [learning/README.md](learning/README.md) for the guided architecture walkthrough, [WORKFLOW.md](WORKFLOW.md) for the end-to-end flow chart, and [guides/USING_YOUR_OWN_KEYS.md](guides/USING_YOUR_OWN_KEYS.md) to understand API keys, tokens, and personal API billing.
 
 ## Architecture
 
@@ -55,6 +55,8 @@ Without any keys, the scripted practice provider and safe local MCP tools still 
 read -s "OPENAI_API_KEY?Paste your OpenAI API key: "
 export OPENAI_API_KEY
 ```
+
+Every person who runs the real OpenAI model must provide their own key. Their API usage is charged to their own API account/project, not to the repository author. See [Use Your Own API Keys and Pay for Your Own Usage](guides/USING_YOUR_OWN_KEYS.md) for the explanation and security checklist.
 
 ## Optional Airbnb MCP
 
