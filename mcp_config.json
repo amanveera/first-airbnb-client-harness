@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "learning-tools": {
+      "command": "node",
+      "args": ["./local-tools/time-server.js"]
+    },
+    "airbnb": {
+      "disabledIfEnvMissing": "HASDATA_API_KEY",
+      "command": "npx",
+      "args": ["-y", "@hasdata/airbnb-mcp"],
+      "env": {
+        "HASDATA_API_KEY": "${HASDATA_API_KEY}"
+      }
+    }
+  }
+}

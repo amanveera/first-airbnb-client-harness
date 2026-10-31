@@ -1,0 +1,33 @@
+{
+  "name": "first-airbnb-client-harness",
+  "version": "0.1.0",
+  "description": "A learning AI client harness with CLI, web UI, MCP tools, approvals, and an optional Airbnb search integration.",
+  "main": "cli.js",
+  "scripts": {
+    "start": "node cli.js",
+    "cli": "node cli.js",
+    "web": "node web-server.js",
+    "test": "node --test token-tracker.test.js agent-runner.test.js mcp-config.test.js tool-input-normalizer.test.js"
+  },
+  "keywords": [
+    "ai",
+    "agent-harness",
+    "cli",
+    "mcp",
+    "model-context-protocol",
+    "openai",
+    "airbnb"
+  ],
+  "author": "Amanveer",
+  "license": "ISC",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/client": "^2.4.0",
+    "@modelcontextprotocol/server": "^2.4.0",
+    "openai": "^7.45.1"
+    ,"zod": "^4.6.7"
+  }
+}

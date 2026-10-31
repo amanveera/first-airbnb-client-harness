@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b1d16" />
+    <title>Aldrin Client</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">A</div>
+          <div>
+            <p class="eyebrow">LOCAL GREENHOUSE HARNESS</p>
+            <h1>Aldrin Client</h1>
+          </div>
+        </div>
+
+        <section class="side-section">
+          <p class="section-label">MODEL</p>
+          <label class="select-wrap" for="model-select">
+            <span class="sr-only">Choose model</span>
+            <select id="model-select"></select>
+          </label>
+          <p id="model-note" class="muted">Choose a model to begin.</p>
+        </section>
+
+        <section class="side-section grow">
+          <div class="section-title-row">
+            <p class="section-label">CONNECTED TOOLS</p>
+            <span id="tool-count" class="count-pill">0</span>
+          </div>
+          <ul id="tool-list" class="tool-list" aria-live="polite"></ul>
+        </section>
+
+        <section class="token-card" aria-live="polite">
+          <div class="section-title-row">
+            <p class="section-label">SESSION TOKENS</p>
+            <span id="token-method" class="token-method">LOCAL</span>
+          </div>
+          <strong id="token-total">0</strong>
+          <span>total tokens</span>
+          <p id="token-detail" class="muted">0 input · 0 output</p>
+        </section>
+
+        <div class="side-actions">
+          <button id="clear-button" class="ghost-button" type="button">Clear chat</button>
+          <button id="save-button" class="ghost-button" type="button">Save transcript</button>
+        </div>
+      </aside>
+
+      <section class="chat-panel">
+        <header class="chat-header">
+          <div>
+            <p id="connection-status" class="connection-status"><span></span> Connecting locally</p>
+            <h2>Grow ideas in daylight.</h2>
+          </div>
+          <p class="header-note">Your local model, tools, and approvals—under one glass roof.</p>
+        </header>
+
+        <div id="conversation" class="conversation" aria-live="polite">
+          <section id="empty-state" class="empty-state">
+            <div class="empty-orbit" aria-hidden="true"><div></div></div>
+            <p class="eyebrow">WELCOME TO THE CANOPY</p>
+            <h3>A calm place for real decisions.</h3>
+            <p>Ask a question, let the model choose a tool, and approve any external request before it leaves your greenhouse.</p>
+            <div class="suggestion-row">
+              <button type="button" data-prompt="What time is it?">Check the time</button>
+              <button type="button" data-prompt="List the workspace files.">Inspect files</button>
+              <button type="button" data-prompt="Search Airbnb in Chicago for 2 adults.">Try an Airbnb search</button>
+            </div>
+          </section>
+        </div>
+
+        <div id="activity" class="activity" aria-live="polite"></div>
+
+        <form id="composer" class="composer">
+          <textarea id="message-input" rows="1" maxlength="8000" placeholder="Message your local client…" aria-label="Message your local client"></textarea>
+          <button id="send-button" class="send-button" type="submit" aria-label="Send message">
+            <span>Send</span><span aria-hidden="true">↗</span>
+          </button>
+          <p class="composer-note">Enter to send · Shift + Enter for a new line</p>
+        </form>
+      </section>
+    </main>
+
+    <template id="message-template">
+      <article class="message">
+        <p class="message-role"></p>
+        <div class="message-content"></div>
+      </article>
+    </template>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

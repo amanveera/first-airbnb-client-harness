@@ -1,0 +1,13 @@
+# Dependencies and operating-system files
+node_modules/
+.DS_Store
+npm-debug.log*
+
+# Secrets: keep keys in your terminal environment, never in Git.
+.env
+.env.*
+!.env.example
+
+# Local user data created while the client runs.
+transcripts/
+.mcp-client-data/
