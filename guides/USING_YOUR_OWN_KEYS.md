@@ -21,22 +21,28 @@ The OpenAI API pricing page shows the current input and output token rates. Pric
 
 1. Create an API key in your own [OpenAI API key settings](https://platform.openai.com/api-keys).
 2. Make sure your own API account/project has billing or credits configured for the usage you intend.
-3. In the Terminal where you will run this project, set the key without saving it in the repository:
+3. Create your ignored local configuration file once:
 
    ```bash
-   read -s "OPENAI_API_KEY?Paste your OpenAI API key: "
-   export OPENAI_API_KEY
+   cp .env.example .env
+   open -e .env
    ```
 
-4. Start the interface:
+4. In `.env`, replace the blank value with your own key:
+
+   ```text
+   OPENAI_API_KEY=your_key_goes_here
+   ```
+
+5. Start the interface:
 
    ```bash
    npm run web
    ```
 
-5. In the browser UI, select **OpenAI API** as the model.
+6. In the browser UI, select **OpenAI API** as the model.
 
-The key exists only in that Terminal session. If you close the Terminal or open a new one, set it again.
+The `.env` file stays only on your own machine. It is ignored by Git, so it does not upload with the repository. Do not paste its contents into chat, GitHub, or screenshots.
 
 ## What gets charged?
 
@@ -55,12 +61,11 @@ This project also has a scripted practice provider. It is local, uses no OpenAI 
 
 The Airbnb search demonstration uses a separate HasData API key. It is optional and has its own account, credits, and terms. Set it in the same secure way:
 
-```bash
-read -s "HASDATA_API_KEY?Paste your HasData API key: "
-export HASDATA_API_KEY
+```text
+HASDATA_API_KEY=your_hasdata_key_goes_here
 ```
 
-Without that key, the project still runs; it simply leaves the Airbnb MCP server disabled.
+Add that line to your local `.env` file. Without the key, the project still runs; it simply leaves the Airbnb MCP server disabled.
 
 ## Keep keys private
 

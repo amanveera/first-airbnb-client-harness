@@ -52,23 +52,21 @@ Then open `http://127.0.0.1:3030`.
 Without any keys, the scripted practice provider and safe local MCP tools still work. Select the OpenAI provider only after setting your own key in the same Terminal session:
 
 ```bash
-read -s "OPENAI_API_KEY?Paste your OpenAI API key: "
-export OPENAI_API_KEY
+cp .env.example .env
+open -e .env
 ```
 
-Every person who runs the real OpenAI model must provide their own key. Their API usage is charged to their own API account/project, not to the repository author. See [Use Your Own API Keys and Pay for Your Own Usage](guides/USING_YOUR_OWN_KEYS.md) for the explanation and security checklist.
+Paste your own keys into the local `.env` file once, save it, then use `npm run web` or `npm run cli` normally. Every person who runs the real OpenAI model must provide their own key. Their API usage is charged to their own API account/project, not to the repository author. See [Use Your Own API Keys and Pay for Your Own Usage](guides/USING_YOUR_OWN_KEYS.md) for the explanation and security checklist.
 
 ## Optional Airbnb MCP
 
 The project uses a hosted HasData Airbnb MCP integration when `HASDATA_API_KEY` is set. It is intentionally disabled when that key is absent, so a new clone can run without it.
 
 ```bash
-read -s "HASDATA_API_KEY?Paste your HasData API key: "
-export HASDATA_API_KEY
-npm run web
+open -e .env
 ```
 
-The key stays in your Terminal environment. Do not put it in `.env.example`, `mcp_config.json`, Git commits, issues, or chat messages.
+Add `HASDATA_API_KEY=...` to your local `.env`, save, then run `npm run web`. Do not put real values in `.env.example`, `mcp_config.json`, Git commits, issues, or chat messages.
 
 ## Safety choices in this project
 
